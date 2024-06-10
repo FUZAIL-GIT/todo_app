@@ -15,8 +15,8 @@ class AppRouter {
     navigatorKey: navigatorKey,
     routes: [
       GoRoute(
-        path: Routes.taskView.path,
-        name: Routes.taskView.name,
+        path: Routes.initial.path,
+        name: Routes.initial.name,
         builder: (context, state) => const TaskView(),
         pageBuilder: (context, state) {
           return CustomTransitionPage(

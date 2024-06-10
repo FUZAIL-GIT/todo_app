@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-TextTheme textTheme = const TextTheme(
+TextTheme textTheme = TextTheme(
   headlineMedium: TextStyle(
-    fontFamily: 'Orbitron',
-    fontSize: 36,
+    fontFamily: 'DMSans',
+    fontSize: 25.sp,
+    fontWeight: FontWeight.w700,
+  ),
+  headlineSmall: TextStyle(
+    fontFamily: 'DMSans',
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
   ),
   labelMedium: TextStyle(
-    fontFamily: 'Poppins',
-    fontSize: 15,
+    fontFamily: 'DMSans',
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
   ),
-  titleMedium: TextStyle(
-    fontFamily: 'Poppins',
-    fontSize: 20,
-    fontWeight: FontWeight.bold,
-    color: Color(0xffFFFFFF),
+  labelLarge: TextStyle(
+    fontFamily: 'DMSans',
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
   ),
 );
