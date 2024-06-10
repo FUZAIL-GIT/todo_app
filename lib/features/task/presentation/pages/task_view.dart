@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:todo_app/core/enums/task_status.dart';
 import 'package:todo_app/core/extensions/buildcontext_extension.dart';
 import 'package:todo_app/features/task/domain/entities/task_entity.dart';
+import 'package:todo_app/features/task/presentation/pages/task_add.dart';
 import 'package:todo_app/features/task/presentation/widgets/task_list.dart';
 
 class TaskView extends StatelessWidget {
@@ -13,7 +14,14 @@ class TaskView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return const TaskAdd();
+            },
+          );
+        },
         label: Text(
           'Add Task ',
           style: context.textTheme.labelMedium!.copyWith(
