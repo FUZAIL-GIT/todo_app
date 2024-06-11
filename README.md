@@ -1,16 +1,40 @@
-# todo_app
+[![PREVIEW DEPLOYMENT](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/preview_deploy.yml/badge.svg)](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/preview_deploy.yml)
 
-A new Flutter project.
+[![BETA DEPLOYMENT](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/beta-deploy.yml/badge.svg)](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/beta-deploy.yml)
 
-## Getting Started
+[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 
-This project is a starting point for a Flutter application.
+# APIER-CLIENT
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Framework : Flutter
+- State management : Getx
+- Architecture : CLEAN ARCHITECTURE
+- Navigation : Go Router
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/FUZAIL-GIT/todo_app
+```
+
+Go to the project directory
+
+```bash
+  cd todo_app
+```
+
+Install dependencies
+
+```bash
+  flutter pub get
+```
+
+Run the application on web
+
+```bash
+  flutter run
+```
