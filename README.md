@@ -1,10 +1,4 @@
-[![PREVIEW DEPLOYMENT](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/preview_deploy.yml/badge.svg)](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/preview_deploy.yml)
-
-[![BETA DEPLOYMENT](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/beta-deploy.yml/badge.svg)](https://github.com/APIER-ORG/APIER-CLIENT/actions/workflows/beta-deploy.yml)
-
-[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
-
-# APIER-CLIENT
+# TODO APP
 
 ## Tech Stack
 
