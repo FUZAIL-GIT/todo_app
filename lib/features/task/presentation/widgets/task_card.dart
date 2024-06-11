@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:todo_app/core/enums/task_status.dart';
 import 'package:todo_app/core/extensions/buildcontext_extension.dart';
 import 'package:todo_app/features/task/domain/entities/task_entity.dart';
+import 'package:todo_app/features/task/presentation/getx/controllers/task_controller.dart';
 
 class TaskCard extends StatelessWidget {
   final TaskEntity task;
@@ -10,18 +11,31 @@ class TaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: getTaskStatusIcon(task.status),
-      title: Text(task.title),
-      subtitle: getTaskStatusText(context, status: task.status),
-      trailing: IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.delete,
-          color: context.colorScheme.error,
-        ),
-      ),
-      onTap: () {},
+    return GetBuilder(
+      init: TaskController(),
+      builder: (controller) {
+        return ListTile(
+          leading: getTaskStatusIcon(task.status),
+          title: Text(task.title),
+          subtitle: getTaskStatusText(
+            context,
+            status: task.status,
+            onAction: () {
+              controller.updateTaskStatus(task);
+            },
+          ),
+          trailing: IconButton(
+            onPressed: () {
+              controller.deleteTask(task.id);
+            },
+            icon: Icon(
+              Icons.delete,
+              color: context.colorScheme.error,
+            ),
+          ),
+          onTap: () {},
+        );
+      },
     );
   }
 
@@ -34,7 +48,8 @@ class TaskCard extends StatelessWidget {
     }
   }
 
-  Text getTaskStatusText(BuildContext context, {required TaskStatus status}) {
+  Widget getTaskStatusText(BuildContext context,
+      {required TaskStatus status, VoidCallback? onAction}) {
     switch (status) {
       case TaskStatus.done:
         return Text(
@@ -45,14 +60,17 @@ class TaskCard extends StatelessWidget {
           ),
         );
       case TaskStatus.pending:
-        return Text(
-          'Mark as done',
-          style: context.textTheme.labelMedium!.copyWith(
-            color: Colors.blue,
-            fontWeight: FontWeight.normal,
-            decoration: TextDecoration.underline,
-            decorationColor: Colors.blue,
-            decorationStyle: TextDecorationStyle.solid,
+        return InkWell(
+          onTap: onAction,
+          child: Text(
+            'Mark as done',
+            style: context.textTheme.labelMedium!.copyWith(
+              color: Colors.blue,
+              fontWeight: FontWeight.normal,
+              decoration: TextDecoration.underline,
+              decorationColor: Colors.blue,
+              decorationStyle: TextDecorationStyle.solid,
+            ),
           ),
         );
     }
